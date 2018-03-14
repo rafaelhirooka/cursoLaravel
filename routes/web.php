@@ -38,5 +38,9 @@ Route::get('/contato/{id?}', function ($id = NULL) {
 });
 
 Route::post('/contato', function () {
+    dd($_POST);
+});
 
+Route::put('/contato', function () {
+    return "PUT";
 });
