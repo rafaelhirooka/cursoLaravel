@@ -29,18 +29,8 @@ Route::get('/contato/{id}', function ($id) {
 /*
  * Nesse caso nessa rota o id não é obrigatório
  */
-Route::get('/contato/{id?}', function ($id = NULL) {
-    if ($id != NULL) {
-        return "Tem o id e ele vale " . $id;
-    } else {
-        return "O id não foi passado";
-    }
-});
+Route::get('/contato/{id?}', ['uses' => 'ContatoController@index']);
 
-Route::post('/contato', function () {
-    dd($_POST);
-});
+Route::post('/contato', ['uses' => 'ContatoController@criar']);
 
-Route::put('/contato', function () {
-    return "PUT";
-});
+Route::put('/contato', ['uses' => 'ContatoController@editar']);
