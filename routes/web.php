@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'site.home', 'uses' => 'Site\HomeController@index']);
 
 /*
  * Nesse caso nessa rota o id é obrigatório ser passado na url
